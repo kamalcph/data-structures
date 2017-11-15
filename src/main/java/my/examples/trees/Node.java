@@ -19,6 +19,10 @@ public class Node {
         this.right = right;
     }
 
+    public boolean isLeaf() {
+        return left == null && right == null;
+    }
+
     @Override
     public String toString() {
         return String.valueOf(data);

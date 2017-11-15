@@ -11,6 +11,33 @@ public class BinaryTree {
         this.root = root;
     }
 
+    public void inOrder(Node node) {
+        if (node == null)
+            return;
+
+        inOrder(node.left);
+        System.out.print(node.data + " ");
+        inOrder(node.right);
+    }
+
+    public void preOrder(Node node) {
+        if (node == null)
+            return;
+
+        System.out.print(node.data + " ");
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+    public void postOrder(Node node) {
+        if (node == null)
+            return;
+
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.print(node.data + " ");
+    }
+
     public void levelOrder(Node node) {
         levelOrder(node, false);
     }
@@ -86,7 +113,7 @@ public class BinaryTree {
      * @param node
      */
     public void convertTree(Node node) {
-       if (node == null || (node.left == null && node.right == null))
+       if (node == null || isLeaf(node))
            return;
 
        convertTree(node.left);
@@ -264,7 +291,14 @@ public class BinaryTree {
         root.left.left = new Node(4);
         root.left.right = new Node(5);
         BinaryTree tree = new BinaryTree(root);
-        System.out.println("The diameter of given binary tree is : "
+        System.out.print("\nInorder traversal : ");
+        tree.inOrder(root);
+        System.out.print("\nPre-order traversal : " );
+        tree.preOrder(root);
+        System.out.print("\nPost-order traversal : ");
+        tree.postOrder(root);
+
+        System.out.println("\nThe diameter of given binary tree is : "
                 + tree.diameter(root));
 
         System.out.println("Has Path Sum = 10 : " + tree.hasPathSum(root, 10));
