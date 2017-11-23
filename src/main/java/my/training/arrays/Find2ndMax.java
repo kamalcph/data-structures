@@ -1,6 +1,6 @@
 package my.training.arrays;
 
-public class FInd2ndMax {
+public class Find2ndMax {
 
     private static int find2ndMax(int[] nums) {
         int left=0;
