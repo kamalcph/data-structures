@@ -1,4 +1,4 @@
-package in.co.nmsworks.nms.system.server;
+package my.examples.trees;
 
 public class BST {
 
